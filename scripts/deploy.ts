@@ -5,12 +5,9 @@ async function main() {
   const ONE_YEAR_IN_SECS = 365 * 24 * 60 * 60;
   const unlockTime = currentTimestampInSeconds + ONE_YEAR_IN_SECS;
 
-  const lockedAmount = ethers.utils.parseEther("1");
-  console.log(1111111111);
-  const Lock = await ethers.getContractFactory("Lock");
-  console.log(2222222222);
-  const lock = await Lock.deploy(unlockTime, { value: lockedAmount });
-  console.log(3333333333);
+  const lockedAmount = ethers.utils.parseEther("1"); 
+  const Lock = await ethers.getContractFactory("Lock"); 
+  const lock = await Lock.deploy(unlockTime, { value: lockedAmount });  
 
   await lock.deployed();
 
