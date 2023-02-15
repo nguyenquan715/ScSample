@@ -31,7 +31,7 @@ contract AccessControl is IAccessControl {
   }
 
   function renounceRole(bytes32 role, address account) public virtual override {
-    require(account == msg.sender(), "AccessControl: can only renounce roles for self");
+    require(account == msg.sender, "AccessControl: can only renounce roles for self");
     _revokeRole(role, account);
   }
 
